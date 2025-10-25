@@ -16,7 +16,7 @@
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -33,6 +33,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
@@ -221,6 +222,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -345,6 +349,14 @@ div.tocify {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">My awesome website</h1>
@@ -357,29 +369,44 @@ div.tocify {
 <p>What if I add some text here?</p>
 <p><img
 src="https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif" /></p>
-<div id="heres-a-subsection" class="section level2">
-<h2>Here’s a subsection</h2>
+</div>
+<div id="heres-a-subsection" class="section level1">
+<h1>Here’s a subsection</h1>
 <p>And here’s some addition text…</p>
 <pre class="r"><code>rnorm(10)</code></pre>
-<pre><code>##  [1]  0.9673911  0.6410741 -1.0128297  0.0640548 -1.2775921 -0.5168528
-##  [7]  0.5118098 -0.6402518 -1.7475531  0.6259307</code></pre>
+<pre><code>##  [1]  0.3582354  0.9864702  0.7251610  1.0262466 -0.6520065  1.4723841
+##  [7] -1.8155251 -0.2445621  1.7654906 -1.5136560</code></pre>
 </div>
-<div id="links" class="section level2">
-<h2>Links</h2>
+<div id="links" class="section level1">
+<h1>Links</h1>
 <p>Let’s link tot useful tools for data science:</p>
 <ul>
 <li><a href="https://www.google.com/">Google</a></li>
 <li><a href="https://p8105.com">P8105</a></li>
 </ul>
 </div>
-<div id="local-image" class="section level2">
-<h2>Local image</h2>
+<div id="local-image" class="section level1">
+<h1>Local image</h1>
 <p>Here’s my cat, Niuniu:</p>
-<p><img src="image/Niuniu.jpg" /></p>
-</div>
+<p><image src="image/Niuniu.jpg"style="width:75%"></p>
 <div id="link-to-page-within-the-site" class="section level2">
 <h2>Link to page within the site</h2>
 <p><a href="about.html">About me</a></p>
+</div>
+<div id="quarterly-results" class="section level2 tabset">
+<h2 class="tabset">Quarterly Results</h2>
+<div id="by-product" class="section level3">
+<h3>By Product</h3>
+<p>This is my first tab and i can do stuff</p>
+</div>
+<div id="by-region" class="section level3">
+<h3>By Region</h3>
+<p>This is my second tab and do other stuff</p>
+</div>
+</div>
+<div id="this-is-a-new-section" class="section level2">
+<h2>This is a new section</h2>
+<p>and it’s really great</p>
 </div>
 </div>
 
@@ -418,6 +445,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {
